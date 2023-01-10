@@ -1,0 +1,36 @@
+Class documentation
+<---- javadoc command: ---->
+javadoc
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+/app/bluej/lib/bluejcore.jar:/app/bluej/lib/junit-jupiter-5.5.2.jar:/app/bluej/lib/junit-jupiter-api-5.5.2.jar:/app/bluej/lib/junit-jupiter-engine-5.5.2.jar:/app/bluej/lib/junit-jupiter-migrationsupport-5.5.2.jar:/app/bluej/lib/junit-jupiter-params-5.5.2.jar:/app/bluej/lib/junit-platform-commons-1.5.2.jar:/app/bluej/lib/junit-platform-console-1.5.2.jar:/app/bluej/lib/junit-platform-console-standalone-1.5.2.jar:/app/bluej/lib/junit-platform-engine-1.5.2.jar:/app/bluej/lib/junit-platform-launcher-1.5.2.jar:/app/bluej/lib/junit-platform-reporting-1.5.2.jar:/app/bluej/lib/junit-platform-runner-1.5.2.jar:/app/bluej/lib/junit-platform-suite-api-1.5.2.jar:/app/bluej/lib/junit-platform-testkit-1.5.2.jar:/app/bluej/lib/junit-quickcheck-core-0.9.jar:/app/bluej/lib/junit-vintage-engine-5.5.2.jar:/app/bluej/lib/hamcrest-core-1.3.jar:/app/bluej/lib/hamcrest-library-1.3.jar:/app/bluej/lib/lang-stride.jar:/app/bluej/lib/javafx/lib/javafx.base.jar:/app/bluej/lib/javafx/lib/javafx.controls.jar:/app/bluej/lib/javafx/lib/javafx.fxml.jar:/app/bluej/lib/javafx/lib/javafx.graphics.jar:/app/bluej/lib/javafx/lib/javafx.media.jar:/app/bluej/lib/javafx/lib/javafx.properties.jar:/app/bluej/lib/javafx/lib/javafx.swing.jar:/app/bluej/lib/javafx/lib/javafx.web.jar:/home/augustin/IPO/TP2/compilation
+-d
+/home/augustin/IPO/TP2/compilation/doc
+-encoding
+windows-1252
+-charset
+windows-1252
+/home/augustin/IPO/TP2/compilation/MaPremiereClasse.java
+<---- end of javadoc command ---->
+Loading source file /home/augustin/IPO/TP2/compilation/MaPremiereClasse.java...
+Constructing Javadoc information...
+Standard Doclet version 11.0.14
+Building tree for all the packages and classes...
+Generating /home/augustin/IPO/TP2/compilation/doc/MaPremiereClasse.html...
+Generating /home/augustin/IPO/TP2/compilation/doc/package-summary.html...
+Generating /home/augustin/IPO/TP2/compilation/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /home/augustin/IPO/TP2/compilation/doc/allclasses.html...
+Generating /home/augustin/IPO/TP2/compilation/doc/allclasses.html...
+Generating /home/augustin/IPO/TP2/compilation/doc/index.html...
