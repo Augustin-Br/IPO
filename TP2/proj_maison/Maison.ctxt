@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Maison
+comment0.text=\n\ Cette\ classe\ represente\ un\ simple\ dessin.\ Vous\ pouvez\ l'afficher\ en\ appelant\n\ la\ methode\ dessine().\ Mais\ il\ y\ a\ mieux\ \:\ comme\ c'est\ un\ dessin\ electronique,\n\ vous\ pouvez\ facilement\ le\ modifier.\ Par\ exemple,\ le\ passer\ en\ noir\ et\ blanc,\n\ puis\ le\ remettre\ en\ couleurs\ (seulement\ apres\ l'avoir\ dessine,\ bien\ sur).\n\n\ (ecrite\ pour\ servir\ d'exemple\ au\ debut\ de\ l'apprentissage\ de\ Java\ avec\ BlueJ)\n\ \n\ @author\ \ Michael\ Kolling\ and\ David\ J.\ Barnes\n\ @author\ \ mod.by\ Denis\ BUREAU\n\ @version\ 2006.03.30/2012.02.06\n
+comment1.params=
+comment1.target=Maison()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Picture\n
+comment2.params=
+comment2.target=void\ dessine()
+comment2.text=\n\ Draw\ this\ picture.\n
+comment3.params=
+comment3.target=void\ place()
+comment3.text=\n\ Slowly\ move\ the\ elements\ to\ their\ place.\n
+comment4.params=
+comment4.target=void\ effaceMaison()
+comment4.text=\n\ Erase\ the\ house\ from\ this\ picture.\n
+comment5.params=
+comment5.target=void\ metNoirEtBlanc()
+comment5.text=\n\ Change\ this\ picture\ to\ black/white\ display\n
+comment6.params=
+comment6.target=void\ metCouleurs()
+comment6.text=\n\ Change\ this\ picture\ to\ use\ color\ display\n
+numComments=7
