@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Command
+comment0.text=\n\ Classe\ Command\ -\ une\ commande\ du\ jeu\ d'aventure\ Zuul.\n\n\ @author\ Brenner\ Augustin\n
+comment1.params=pCommandWord\ pSecondWord
+comment1.target=Command(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getCommandWord()
+comment2.text=\n\ Accesseur\ CommandWord\n
+comment3.params=
+comment3.target=java.lang.String\ getSecondWord()
+comment3.text=\n\ Accesseur\ SecondWord\n
+comment4.params=
+comment4.target=boolean\ hasSecondWord()
+comment4.text=\n\ Fonction\ qui\ renvoie\ vraie\ si\ il\ y\ a\ un\ second\ mot\n
+comment5.params=
+comment5.target=boolean\ isUnknown()
+comment5.text=\n\ La\ fonction\ renvoie\ vrai\ si\ le\ premier\ mot\ est\ null\n
+numComments=6
