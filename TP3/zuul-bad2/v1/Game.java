@@ -8,12 +8,14 @@ package v1;
 public class Game
 {
     private Room aCurrentRoom;
-    
+    private Parser aParser;
     /**
      * Constructeur par défault
      */
     public Game(){
         this.createRooms();
+        this.aParser = new Parser();
+        printWelcome();
     }
     
     /**
@@ -47,7 +49,6 @@ public class Game
             return;
         }
         
-        //Partie B
         Room vNextRoom = null;
         String vDirection = pInstruction.getSecondWord();
         if (vDirection.equals("north")){
@@ -63,13 +64,11 @@ public class Game
             return;
         }
         
-        //Partie C
         if (vNextRoom == null){
             System.out.println("There is no door !");
             return;
         }
-        
-        //Partie D
+   
         this.aCurrentRoom = vNextRoom;
         System.out.println(this.aCurrentRoom.getDescription());
         System.out.print("Exits: ");
@@ -87,4 +86,63 @@ public class Game
         }
         System.out.println("");
     }   
+    
+    private void printWelcome(){
+        System.out.println("Welcome to the World of Zuul! \n World of Zuul is a new, incredibly boring adventure game. \n Type 'help' if you need help. \n \n");
+        String vNorth = "";
+        String vSouth = "";
+        String vEast = "";
+        String vWest = "";
+        if (this.aCurrentRoom.aNorthExit != null){
+            vNorth = "north ";
+        }
+        if (this.aCurrentRoom.aSouthExit != null){
+            vSouth = "south";
+        }
+        if (this.aCurrentRoom.aEastExit != null){
+            vEast = "east";
+        }
+        if (this.aCurrentRoom.aWestExit != null){
+            vWest = "west";
+        }
+        System.out.println("You are" + this.aCurrentRoom + "\n Exits" + vNorth + " " + vSouth + " " + vEast + " " + vWest);
+        // You are outside the main entrance of the university \n Exits: east south west
+    }
+    
+    private void printHelp(){
+        System.out.println("You are lost. You are alone. \n You wander around at the university. \n \n Your command words are: \n  go quit help");
+    }
+    
+    private boolean quit(final Command pQuit){
+        System.out.println("Quit what ?");
+        return pQuit.hasSecondWord() == false;
+    }
+    
+    private boolean processCommand(final Command pInstruction){
+        if(pInstruction.isUnknown()){
+            System.out.println("I don't know what you mean...");
+            return false;
+        }else if(pInstruction.getCommandWord().equals("quit")){
+            return quit(pInstruction);
+        }else if (pInstruction.getCommandWord().equals("Help")){
+            printHelp();
+            return false;
+        }else if(pInstruction.getCommandWord().equals("go")){
+            goRoom(pInstruction);
+            return false;
+        }else{
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
+    }
+    
+    public void play(){
+        printWelcome();
+        boolean vFinished = false;
+        while (vFinished == false){
+            Command vCommand = aParser.getCommand();
+            vFinished = processCommand(vCommand);
+        }
+        System.out.println("Thank you for playing.  Good bye.");
+    }
 } // Game
