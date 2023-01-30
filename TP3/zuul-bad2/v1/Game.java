@@ -15,7 +15,7 @@ public class Game
     public Game(){
         this.createRooms();
         this.aParser = new Parser();
-        printWelcome();
+        //printWelcome();
     }
     
     /**
@@ -105,7 +105,7 @@ public class Game
         if (this.aCurrentRoom.aWestExit != null){
             vWest = "west";
         }
-        System.out.println("You are" + this.aCurrentRoom + "\n Exits" + vNorth + " " + vSouth + " " + vEast + " " + vWest);
+        System.out.println("You are" + aCurrentRoom.getDescription() + "\n Exits" + vNorth + " " + vSouth + " " + vEast + " " + vWest);
         // You are outside the main entrance of the university \n Exits: east south west
     }
     
@@ -114,8 +114,12 @@ public class Game
     }
     
     private boolean quit(final Command pQuit){
-        System.out.println("Quit what ?");
-        return pQuit.hasSecondWord() == false;
+        if (pQuit.hasSecondWord()){
+            System.out.println("Quit what?");
+            return false;
+        }else{
+            return true;
+        }
     }
     
     private boolean processCommand(final Command pInstruction){
@@ -124,7 +128,7 @@ public class Game
             return false;
         }else if(pInstruction.getCommandWord().equals("quit")){
             return quit(pInstruction);
-        }else if (pInstruction.getCommandWord().equals("Help")){
+        }else if (pInstruction.getCommandWord().equals("help")){
             printHelp();
             return false;
         }else if(pInstruction.getCommandWord().equals("go")){
