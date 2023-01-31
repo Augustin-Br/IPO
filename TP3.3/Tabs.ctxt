@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Tabs
+comment0.text=\n\ D\u00E9crivez\ votre\ classe\ Tabs\ ici.\n\n\ @author\ (votre\ nom)\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\n
+comment1.params=pTab
+comment1.target=void\ affTab(int[])
+comment2.params=pTab
+comment2.target=void\ affTabInv(int[])
+comment3.params=pTab
+comment3.target=void\ initTab(int[])
+numComments=4
