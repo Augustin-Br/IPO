@@ -23,6 +23,13 @@ public class Utilisation
         Tabs.affTab(vTab);
         System.out.println("\n affTabInv : \n");
         Tabs.affTabInv(vTab);
-        
+        System.out.println("\n somme : \n");
+        int[] vTab1 = {1, 2, 3, 4, 5, 6};
+        System.out.println(Tabs.somme(vTab1));
+        System.out.println("\n minimum : \n");
+        double[] vTab2 = {14.45, 2.15, 34.25, 0.24, 5.87, 0.64, 0.24, 0.65, 0.63, 4};
+        System.out.println(Tabs.minimum(vTab2));
+        System.out.println("\n indice du minimum : \n");
+        System.out.println(Tabs.indiceDuMinimum(vTab2));
     }
 }
