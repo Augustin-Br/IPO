@@ -47,6 +47,26 @@ public class Game
     }
     
     /**
+     * Procédure qui affiche les informations de la localisation
+     */
+    private void printLocation(){
+        System.out.println("You are " + aCurrentRoom.getDescription());
+        System.out.println("Exits : ");
+        if(aCurrentRoom.aNorthExit != null){
+            System.out.println("north ");
+        }
+        if(aCurrentRoom.aSouthExit != null){
+            System.out.println("south ");
+        }
+        if(aCurrentRoom.aEastExit != null){
+            System.out.println("east ");
+        }
+        if(aCurrentRoom.aWestExit != null){
+            System.out.println("west ");
+        }
+    }
+    
+    /**
      * Procédure qui permet un changement de pièce
      * @param -> pInstruction (Command)
      */
@@ -79,7 +99,7 @@ public class Game
         }
    
         this.aCurrentRoom = vNextRoom;
-        System.out.println(this.aCurrentRoom.getDescription());
+        /*System.out.println(this.aCurrentRoom.getDescription());
         System.out.print("Exits: ");
         if (this.aCurrentRoom.aNorthExit != null){
             System.out.print("north ");
@@ -94,11 +114,13 @@ public class Game
             System.out.print("west ");
         }
         System.out.println("");
+        */
+        printLocation();
     }   
     
     private void printWelcome(){
         System.out.println("Welcome to the World of Zuul! \n World of Zuul is a new, incredibly boring adventure game. \n Type 'help' if you need help. \n \n");
-        String vNorth = "";
+        /*String vNorth = "";
         String vSouth = "";
         String vEast = "";
         String vWest = "";
@@ -116,6 +138,9 @@ public class Game
         }
         System.out.println("You are " + aCurrentRoom.getDescription().toLowerCase() + "\n Exits : " + vNorth + " " + vSouth + " " + vEast + " " + vWest);
         // You are outside the main entrance of the university \n Exits: east south west
+        
+        */
+        printLocation();
     }
     
     private void printHelp(){
