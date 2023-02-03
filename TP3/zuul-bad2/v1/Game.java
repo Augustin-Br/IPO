@@ -141,7 +141,7 @@ public class Game
     }
     
     public void play(){
-        printWelcome();
+        this.printWelcome();
         boolean vFinished = false;
         while (vFinished == false){
             Command vCommand = aParser.getCommand();
