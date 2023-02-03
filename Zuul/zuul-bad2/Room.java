@@ -1,4 +1,5 @@
-package v1;
+ 
+
 /**
  * Classe Room - un lieu du jeu d'aventure Zuul.
  *
