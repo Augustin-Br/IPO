@@ -22,19 +22,29 @@ public class Game
      * Procédure de création de Room
      */
     private void createRooms(){
-        Room vPub = new Room("in the campus pub");
-        Room vOutside = new Room("outside the main entrance of the university");
-        Room vLab = new Room("in the computing lab");
-        Room vTheatre = new Room("in a lecture theatre");
-        Room vOffice = new Room("in the computing admin office");
+        Room vPlace = new Room("In the public place");
+        Room vForest = new Room("In the forest");
+        Room vClearing = new Room("In the strange clearing");
+        Room vBar = new Room("In the bar");
+        Room vHotel = new Room("In the hotel");
+        Room vMarket = new Room("In the market");
+        Room vPort = new Room("In the port");
+        Room vCove = new Room("On the cove");
+        Room vAgroundBoat = new Room("In the aground boat");
+        Room vBeach = new Room("On the beach");
         
-        vPub.setExits(null, null, vOutside, null);
-        vOutside.setExits(null, vLab, vTheatre, vPub);
-        vTheatre.setExits(null, null, null, vOutside);
-        vLab.setExits(vOutside, null, vOffice, null);
-        vOffice.setExits(null, null, null, vLab);
+        vPlace.setExits(vForest, vMarket, vBar, vHotel);
+        vForest.setExits(null, vPlace, vClearing, null);
+        vClearing.setExits(null, null, null, vForest);
+        vBar.setExits(null, null, null, vPlace);
+        vHotel.setExits(null, null, vPlace, null);
+        vMarket.setExits(vPlace, null, vPort, vBeach);
+        vPort.setExits(null, null, null, vMarket);
+        vCove.setExits(null, vBeach, null, null);
+        vAgroundBoat.setExits(vBeach, null, null, null);
+        vBeach.setExits(vCove, vAgroundBoat, vMarket, null);
         
-        this.aCurrentRoom = vOutside;
+        this.aCurrentRoom = vPlace;
     }
     
     /**
@@ -105,12 +115,12 @@ public class Game
         if (this.aCurrentRoom.aWestExit != null){
             vWest = "west";
         }
-        System.out.println("You are" + aCurrentRoom.getDescription() + "\n Exits" + vNorth + " " + vSouth + " " + vEast + " " + vWest);
+        System.out.println("You are " + aCurrentRoom.getDescription().toLowerCase() + "\n Exits : " + vNorth + " " + vSouth + " " + vEast + " " + vWest);
         // You are outside the main entrance of the university \n Exits: east south west
     }
     
     private void printHelp(){
-        System.out.println("You are lost. You are alone. \n You wander around at the university. \n \n Your command words are: \n  go quit help");
+        System.out.println("You are lost. You are alone. \n You wander around the island. \n \n Your command words are: \n  go quit help");
     }
     
     private boolean quit(final Command pQuit){
