@@ -49,8 +49,9 @@ public class Game
     /**
      * Procédure qui affiche les informations de la localisation
      */
-    private void printLocation(){
+    private void printLocationInfo(){
         System.out.println("You are " + aCurrentRoom.getDescription());
+        /*
         System.out.println("Exits : ");
         if(aCurrentRoom.aNorthExit != null){
             System.out.println("north ");
@@ -64,6 +65,8 @@ public class Game
         if(aCurrentRoom.aWestExit != null){
             System.out.println("west ");
         }
+        */
+       System.out.println(this.aCurrentRoom.getExitString());
     }
     
     /**
@@ -80,18 +83,27 @@ public class Game
         
         Room vNextRoom = null;
         String vDirection = pInstruction.getSecondWord();
+        /*
         if (vDirection.equals("north")){
-            vNextRoom = this.aCurrentRoom.aNorthExit;
+            vNextRoom = aCurrentRoom.getExit("north");
         }else if (vDirection.equals("south")){
-            vNextRoom = this.aCurrentRoom.aSouthExit;
+            vNextRoom = aCurrentRoom.getExit("south");
         }else if (vDirection.equals("east")){
-            vNextRoom = this.aCurrentRoom.aEastExit;
+            vNextRoom = aCurrentRoom.getExit("east");
         }else if (vDirection.equals("west")){
-            vNextRoom = this.aCurrentRoom.aWestExit;
+            vNextRoom = aCurrentRoom.getExit("west");
         }else{
             System.out.println("Unknown direction!");
             return;
         }
+        */
+        if(vDirection.equals("north") || vDirection.equals("south") || vDirection.equals("east") ||vDirection.equals("west")){
+            vNextRoom = aCurrentRoom.getExit(vDirection);
+        }else{
+            System.out.println("Unknown direction!");
+            return;
+        }
+        
         
         if (vNextRoom == null){
             System.out.println("There is no door !");
@@ -115,7 +127,7 @@ public class Game
         }
         System.out.println("");
         */
-        printLocation();
+        printLocationInfo();
     }   
     
     private void printWelcome(){
@@ -140,7 +152,7 @@ public class Game
         // You are outside the main entrance of the university \n Exits: east south west
         
         */
-        printLocation();
+        printLocationInfo();
     }
     
     private void printHelp(){
