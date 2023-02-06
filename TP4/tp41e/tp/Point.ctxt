@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Point
+comment0.text=\n\ D\u00E9crivez\ votre\ classe\ Point\ ici.\n\n\ @author\ (votre\ nom)\n
+comment1.params=pX\ pY
+comment1.target=Point(int,\ int)
+comment2.params=
+comment2.target=Point()
+comment3.params=pDeltaX\ pDeltaY
+comment3.target=void\ deplace(int,\ int)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=
+comment5.target=void\ affiche()
+numComments=6
