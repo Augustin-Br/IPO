@@ -28,4 +28,13 @@ public class PointColore extends Point
     public @Override String toString(){
         return ""+this.aCouleur+":"+super.toString();
     }
+    
+    public @Override boolean equals(final Object pObj){
+        if (!super.equals(pObj)){
+            return false;
+        }
+        
+        PointColore vPointColore = (PointColore)pObj;
+        return this.aCouleur.equals(vPointColore.aCouleur);
+    }
 }

@@ -32,4 +32,19 @@ public class Point
     public void affiche(){
         System.out.println(toString());
     }
+    
+    
+    @Override public boolean equals(final Object pObj){
+        if (pObj == this){
+            return true;
+        }
+        if (pObj == null){
+            return false;
+        }
+        if (! pObj.getClass().equals(this.getClass())){
+            return false;
+        }            
+        Point vPoint = (Point)pObj;
+        return this.aX == vPoint.aX && this.aY == vPoint.aY;
+    }
 }
