@@ -1,64 +1,29 @@
 <?php
 
-//Initialization $url
-$GLOBALS['url'] = '';
+// URL de base pour les routes
+$base_url = '/';
 
-//Initialization $content
-$GLOBALS['content'] = '';
+// Tableau associatif qui mappe les URL avec les noms de vues
+$routes = [
+  '' => 'home.php',
+  'auteur' => 'auteur.php',
+  'test' => 'test.php',
+  'copyright' => 'copyright.php',
+];
 
-//Initialization $title
-$GLOBALS['title'] = '';
+// Récupère le chemin d'URL après la base
+$path = str_replace($base_url, '', $_SERVER['REQUEST_URI']);
 
-//Initialization $src (source de la podcast)
-$GLOBALS['src'] = '';
-
-//Convert url to array
-if (isset($_GET['url'])) {
-    $GLOBALS['url'] = explode('/', $_GET['url']);
+// Si la route demandée est trouvée dans le tableau de routes, utilisez la vue associée
+if (array_key_exists($path, $routes)) {
+  $view = 'views/' . $routes[$path];
+  if (file_exists($view)) {
+    include $view;
+    exit;
+  }
 }
 
-//Routage
+// Sinon, renvoie une erreur 404
+http_response_code(404);
+include 'views/404.php';
 
-try {
-  if (($GLOBALS['url'] == '')) { //Home
-      require('view/page/home.php');
-
-  } elseif ($GLOBALS['url'][0] == 'podcast') { //Connexion
-      require('view/page/podcast.php');
-
-  }elseif ($GLOBALS['url'][0] == 'page2') { //Connexion
-          require('view/page/page2.php');
-
-  } elseif ($GLOBALS['url'][0] == 'page3') { //Connexion
-          require('view/page/page3.php');
-
-  }elseif ($GLOBALS['url'][0] == 'page4') { //Connexion
-          require('view/page/page4.php');
-
-  }elseif ($GLOBALS['url'][0] == 'contact') { //Connexion
-          require('view//page/contact.php');
-
-  }elseif ($GLOBALS['url'][0] == 'responsive') { //Connexion
-          require('view/responsive.php');
-
-  }elseif ($GLOBALS['url'][0] == 'template_podcast') { //Connexion
-          require('view/template/template_podcast.php');
-
-  }elseif ($GLOBALS['url'][0] == 'equipe') { //Connexion
-          require('view/page/equipe.php');
-
-        }
-
-} catch (\Exception $e) {
-  print_r($e);
-}
-
-
-// rechercher nom + description d'un fichier audio dans le dossier
-// rechercher le nom du mp3 dans l'url (methode get)
-// rechercher dans le fichier "audio"
-// remplacer dans home.php la dernière podcast
-
-//echo($GLOBALS['url'][0]);
-
-require("view/template/template.php");
