@@ -1,0 +1,173 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/*
+.footer{
+  position: inherit;
+  background-color: #50c2f9;
+  width: 1496px; /*1536*/ /*
+  bottom: 2px;
+  left: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 70px;
+}
+*/
+
+#description{
+  position: absolute;
+  /*width: 1180px;
+  margin-left: 50px;*/
+  bottom: 50px;
+  left: 145px;
+  right: 398px;
+  background-color: green;
+  text-align: justify;
+  z-index: 1;
+}
+
+#miniature{
+  position: absolute;
+  top: 170px;
+  left: 400px;
+  width: 500px;
+  z-index: 1;
+}
+
+#image_presentation{
+  position: absolute;
+  margin-left: 50px;
+  width: 1180px;
+  height: 528.8px;
+  z-index: 1;
+}
+
+#player{
+  width: 246px;
+}
+
+.colonne_info {
+  position: absolute;
+  text-align: justify;
+  background-color: green;
+  right: 10px;
+  width: 275px;
+  z-index: 0;
+}
+
+.background {
+  background-color: blue;
+}
+
+.bandeau {
+  background-color: yellow;
+  height: 100px;
+	top: 5px;
+	right: 10px;
+  margin-left: 165px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.logo {
+	top: 5px;
+  background-color: grey;
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+
+.menu__btn>span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn>span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  transition-duration: .25s;
+  z-index: 2;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
