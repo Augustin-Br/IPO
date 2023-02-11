@@ -1,13 +1,14 @@
 ##################################################
 
-Options +FollowSymLinks
+#active la réécriture d'url
+RewriteEngine On
 
-RewriteEngine on
-RewriteBase /
-
+#redirige les requetes d'url vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
+RewriteRule ^(.*)$ index.php?url=$1 [NC,L]
 
+#empêche index of/
+Options -Indexes
 
 ##################################################
