@@ -7,8 +7,9 @@
     <title><?= $GLOBALS['title'] ?></title>
   </head>
   <header>
-      <div class="logo">Logo</div>
-      <div class="bandeau">Bandeau</div>
+      <!-- <div class="logo">Logo</div> -->
+      <!-- <div class="bandeau">Bandeau</div> -->
+      <h1 class="title">Objectif Pirate</h1>
   </header>
   <body>
     <?php require("views/template/navbar.php"); ?>

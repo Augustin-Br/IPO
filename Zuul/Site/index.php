@@ -9,10 +9,14 @@ $routes = [
   'auteur' => 'auteur.php',
   'test' => 'test.php',
   'copyright' => 'copyright.php',
+  'telechargement' => 'download.php',
+  'responsive' => 'responsive.php',
+  'galerie' => 'galerie.php',
 ];
 
 // Récupère le chemin d'URL après la base
 $path = str_replace($base_url, '', $_SERVER['REQUEST_URI']);
+
 
 // Si la route demandée est trouvée dans le tableau de routes, utilisez la vue associée
 if (array_key_exists($path, $routes)) {
