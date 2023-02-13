@@ -18,7 +18,11 @@ public class Room
     public Room aEastExit;
     public Room aWestExit;
     */
-   
+    
+    /**
+     * Constructeur naturel
+     * @param pDescription -> La description de la pièce
+     */
     public Room(final String pDescription){
         this.aDescription = pDescription;
         aExits = new HashMap<String, Room>(); // Création d'une HashMap vide
@@ -33,7 +37,7 @@ public class Room
     
     /**
      * Renvoie les valeurs des différentes sorties en fonctions de la direction indiqué. La valeur retourné est de type "Room"
-     * @param -> String : direction
+     * @param pDirection -> String : direction
      * @return -> Room : sortie dans la direction indiqué par le joueur
      */
     public Room getExit(final String pDirection){
@@ -78,8 +82,9 @@ public class Room
     // }
     
     /**
-     * Définition des sorties de chaque pieces. Chaque direction conduit à une autre pièces ou est "null"
-     * @param : les différentes directions du type "Room"
+     * Définition des sorties de chaque piece. Chaque direction conduit à une autre pièces ou est "null"
+     * @param pDirection -> La direction de la sortie
+     * @param pNeighbor -> La piece dans la direction indiqué
      */
     public void setExits(final String pDirection, final Room pNeighbor){
         /*

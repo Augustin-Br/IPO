@@ -31,6 +31,7 @@ public class Game
         Room vCove = new Room("On the cove");
         Room vAgroundBoat = new Room("In the aground boat");
         Room vBeach = new Room("On the beach");
+        Room vBedroom = new Room("A classic bedroom with a comfortable bed");
         
         /*
         vPlace.setExits(vForest, vMarket, vBar, vHotel);
@@ -63,6 +64,10 @@ public class Game
         
         // Sortie de l'hotel
         vHotel.setExits("east", vPlace);
+        vHotel.setExits("up", vBedroom);
+
+        // Sortie de la chambre 
+        vBedroom.setExits("down", vHotel);
         
         // Sortie du marché
         vMarket.setExits("north", vPlace);
@@ -115,59 +120,39 @@ public class Game
      */
     private void goRoom(final Command pInstruction)
     {
-        //Partie A
+        // Verification que le joueur à bien indiqué une direction
         if (!pInstruction.hasSecondWord()){
             System.out.println("Go where ?");
             return;
         }
         
-        Room vNextRoom = null;
-        String vDirection = pInstruction.getSecondWord();
-        /*
-        if (vDirection.equals("north")){
-            vNextRoom = aCurrentRoom.getExit("north");
-        }else if (vDirection.equals("south")){
-            vNextRoom = aCurrentRoom.getExit("south");
-        }else if (vDirection.equals("east")){
-            vNextRoom = aCurrentRoom.getExit("east");
-        }else if (vDirection.equals("west")){
-            vNextRoom = aCurrentRoom.getExit("west");
-        }else{
+        Room vNextRoom = null; // définition de la prochaine piece
+        String vDirection = pInstruction.getSecondWord(); // la direction indiqué par le joueur
+        boolean vUnknowDirection = true; // permet de savoir si le joueur a donné une direcion valide
+        String[] vTabDirection = {"north", "south", "east", "west", "up", "down"}; // tableau des directions possibles
+        
+        // Verification de la commande entré par le joueur
+        for (int i = 0; i < vTabDirection.length; i++){
+            if (vDirection.equals(vTabDirection[i])){
+                vNextRoom = aCurrentRoom.getExit(vDirection);
+                vUnknowDirection = false;
+            }
+        }
+        
+        // Si la commande ne corresond à aucune direction
+        if(vUnknowDirection == true){
             System.out.println("Unknown direction!");
             return;
         }
-        */
-        if(vDirection.equals("north") || vDirection.equals("south") || vDirection.equals("east") ||vDirection.equals("west")){
-            vNextRoom = aCurrentRoom.getExit(vDirection);
-        }else{
-            System.out.println("Unknown direction!");
-            return;
-        }
-        
-        
-        if (vNextRoom == null){
+        // Sinon si il n'y a pas de piece dans la direction indiqué par le joueur
+        else if(vNextRoom == null){
             System.out.println("There is no door !");
             return;
         }
-   
-        this.aCurrentRoom = vNextRoom;
-        /*System.out.println(this.aCurrentRoom.getDescription());
-        System.out.print("Exits: ");
-        if (this.aCurrentRoom.aNorthExit != null){
-            System.out.print("north ");
-        }
-        if (this.aCurrentRoom.aSouthExit != null){
-            System.out.print("south ");
-        }
-        if (this.aCurrentRoom.aEastExit != null){
-            System.out.print("east ");
-        }
-        if (this.aCurrentRoom.aWestExit != null){
-            System.out.print("west ");
-        }
-        System.out.println("");
-        */
-        printLocationInfo();
+ 
+        this.aCurrentRoom = vNextRoom; // définie la prochaine piece
+
+        printLocationInfo(); // affiche la description de la piece
     }   
     
     private void printWelcome(){
