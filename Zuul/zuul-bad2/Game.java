@@ -32,6 +32,7 @@ public class Game
         Room vAgroundBoat = new Room("In the aground boat");
         Room vBeach = new Room("On the beach");
         
+        /*
         vPlace.setExits(vForest, vMarket, vBar, vHotel);
         vForest.setExits(null, vPlace, vClearing, null);
         vClearing.setExits(null, null, null, vForest);
@@ -42,6 +43,45 @@ public class Game
         vCove.setExits(null, vBeach, null, null);
         vAgroundBoat.setExits(vBeach, null, null, null);
         vBeach.setExits(vCove, vAgroundBoat, vMarket, null);
+        */
+        
+        // Sortie de la place
+        vPlace.setExits("north", vForest);
+        vPlace.setExits("south", vMarket);
+        vPlace.setExits("east", vBar);
+        vPlace.setExits("west", vHotel);
+        
+        // Sortie de la foret 
+        vForest.setExits("south", vPlace); 
+        vForest.setExits("east", vClearing); 
+        
+        // Sortie de la clairière
+        vClearing.setExits("west", vForest);
+        
+        // Sortie du bar
+        vBar.setExits("west", vPlace);
+        
+        // Sortie de l'hotel
+        vHotel.setExits("east", vPlace);
+        
+        // Sortie du marché
+        vMarket.setExits("north", vPlace);
+        vMarket.setExits("east", vPort);
+        vMarket.setExits("west", vBeach);
+        
+        // Sortie du port 
+        vPort.setExits("west", vMarket);
+        
+        // Sortie de la crique
+        vCove.setExits("south", vBeach);
+        
+        // Sortie du bateau échoué 
+        vAgroundBoat.setExits("north", vBeach);
+        
+        // Sortie de la plage 
+        vBeach.setExits("north", vCove);
+        vBeach.setExits("south", vAgroundBoat);
+        vBeach.setExits("east", vMarket);
         
         this.aCurrentRoom = vPlace;
     }

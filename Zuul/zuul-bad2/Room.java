@@ -1,20 +1,27 @@
- 
-
-/**
+ /**
  * Classe Room - un lieu du jeu d'aventure Zuul.
  *
  * @author Brenner Augustin
  */
+
+import java.util.HashMap;
+import java.util.Set;
+
 public class Room
 {
     private String aDescription; // Description des lieux
+    private HashMap<String, Room> aExits; //HashMap
+    
+    /* Les quatres directions sorties
     public Room aNorthExit;
     public Room aSouthExit;
     public Room aEastExit;
     public Room aWestExit;
-    
+    */
+   
     public Room(final String pDescription){
         this.aDescription = pDescription;
+        aExits = new HashMap<String, Room>(); // Création d'une HashMap vide
     }
     
     /**
@@ -30,22 +37,7 @@ public class Room
      * @return -> Room : sortie dans la direction indiqué par le joueur
      */
     public Room getExit(final String pDirection){
-        if (pDirection.equals("north")){
-            return aNorthExit;
-        }
-        
-        if (pDirection.equals("south")){
-            return aSouthExit;
-        }
-        
-        if (pDirection.equals("east")){
-            return aEastExit;
-        }
-        
-        if (pDirection.equals("west")){
-            return aWestExit;
-        }
-        return null;
+        return aExits.get(pDirection);
     }
     
     /**
@@ -54,6 +46,7 @@ public class Room
      */
     public String getExitString(){
         String vExit = "Exits : ";
+        /*
         if(this.getExit("north") != null){
             vExit += "north ";
         }
@@ -69,6 +62,11 @@ public class Room
         if(this.getExit("west") != null){
             vExit += "west ";
         }
+        */
+        Set<String> vI = this.aExits.keySet();
+        for (String vE : vI){
+            vExit += " " + vE;
+        }        
         return vExit;
     }
     
@@ -83,21 +81,24 @@ public class Room
      * Définition des sorties de chaque pieces. Chaque direction conduit à une autre pièces ou est "null"
      * @param : les différentes directions du type "Room"
      */
-    public void setExits(final Room pNorthExit, final Room pSouthExit, final Room pEastExit, final Room pWestExit){
+    public void setExits(final String pDirection, final Room pNeighbor){
+        /*
         if(pNorthExit != null){
-            aNorthExit = pNorthExit;
+            aExits.put("north", pNorthExit);
         }
         
         if(pSouthExit != null){
-            aSouthExit = pSouthExit;
+            aExits.put("south", pSouthExit);
         }
         
         if(pEastExit != null){
-            aEastExit = pEastExit;
+            aExits.put("east", pEastExit);
         }
         
         if(pWestExit != null){
-            aWestExit = pWestExit;
+            aExits.put("west", pWestExit);
         }
+        */
+        aExits.put(pDirection, pNeighbor);
     }
 } // Room
