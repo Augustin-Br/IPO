@@ -32,62 +32,51 @@ public class Game
         Room vAgroundBoat = new Room("In the aground boat");
         Room vBeach = new Room("On the beach");
         Room vBedroom = new Room("A classic bedroom with a comfortable bed");
-        
-        /*
-        vPlace.setExits(vForest, vMarket, vBar, vHotel);
-        vForest.setExits(null, vPlace, vClearing, null);
-        vClearing.setExits(null, null, null, vForest);
-        vBar.setExits(null, null, null, vPlace);
-        vHotel.setExits(null, null, vPlace, null);
-        vMarket.setExits(vPlace, null, vPort, vBeach);
-        vPort.setExits(null, null, null, vMarket);
-        vCove.setExits(null, vBeach, null, null);
-        vAgroundBoat.setExits(vBeach, null, null, null);
-        vBeach.setExits(vCove, vAgroundBoat, vMarket, null);
-        */
-        
+
         // Sortie de la place
         vPlace.setExits("north", vForest);
         vPlace.setExits("south", vMarket);
         vPlace.setExits("east", vBar);
         vPlace.setExits("west", vHotel);
-        
-        // Sortie de la foret 
-        vForest.setExits("south", vPlace); 
-        vForest.setExits("east", vClearing); 
-        
+
+        // Sortie de la foret
+        vForest.setExits("south", vPlace);
+        vForest.setExits("east", vClearing);
+
         // Sortie de la clairière
         vClearing.setExits("west", vForest);
-        
+
         // Sortie du bar
         vBar.setExits("west", vPlace);
-        
+
         // Sortie de l'hotel
         vHotel.setExits("east", vPlace);
         vHotel.setExits("up", vBedroom);
+        vHotel.setExits("south-east", vMarket);
 
-        // Sortie de la chambre 
+        // Sortie de la chambre
         vBedroom.setExits("down", vHotel);
-        
+
         // Sortie du marché
         vMarket.setExits("north", vPlace);
         vMarket.setExits("east", vPort);
         vMarket.setExits("west", vBeach);
-        
-        // Sortie du port 
+        vMarket.setExits("north-west", vHotel);
+
+        // Sortie du port
         vPort.setExits("west", vMarket);
-        
+
         // Sortie de la crique
         vCove.setExits("south", vBeach);
-        
-        // Sortie du bateau échoué 
+
+        // Sortie du bateau échoué
         vAgroundBoat.setExits("north", vBeach);
-        
-        // Sortie de la plage 
+
+        // Sortie de la plage
         vBeach.setExits("north", vCove);
         vBeach.setExits("south", vAgroundBoat);
         vBeach.setExits("east", vMarket);
-        
+
         this.aCurrentRoom = vPlace;
     }
     
@@ -95,22 +84,7 @@ public class Game
      * Procédure qui affiche les informations de la localisation
      */
     private void printLocationInfo(){
-        System.out.println("You are " + aCurrentRoom.getDescription());
-        /*
-        System.out.println("Exits : ");
-        if(aCurrentRoom.aNorthExit != null){
-            System.out.println("north ");
-        }
-        if(aCurrentRoom.aSouthExit != null){
-            System.out.println("south ");
-        }
-        if(aCurrentRoom.aEastExit != null){
-            System.out.println("east ");
-        }
-        if(aCurrentRoom.aWestExit != null){
-            System.out.println("west ");
-        }
-        */
+       System.out.println("You are " + aCurrentRoom.getDescription());
        System.out.println(this.aCurrentRoom.getExitString());
     }
     
@@ -125,12 +99,12 @@ public class Game
             System.out.println("Go where ?");
             return;
         }
-        
+
         Room vNextRoom = null; // définition de la prochaine piece
         String vDirection = pInstruction.getSecondWord(); // la direction indiqué par le joueur
         boolean vUnknowDirection = true; // permet de savoir si le joueur a donné une direcion valide
-        String[] vTabDirection = {"north", "south", "east", "west", "up", "down"}; // tableau des directions possibles
-        
+        String[] vTabDirection = {"north", "south", "east", "west", "up", "down", "north-west", "south-east"}; // tableau des directions possibles
+
         // Verification de la commande entré par le joueur
         for (int i = 0; i < vTabDirection.length; i++){
             if (vDirection.equals(vTabDirection[i])){
@@ -138,7 +112,7 @@ public class Game
                 vUnknowDirection = false;
             }
         }
-        
+
         // Si la commande ne corresond à aucune direction
         if(vUnknowDirection == true){
             System.out.println("Unknown direction!");
@@ -149,11 +123,11 @@ public class Game
             System.out.println("There is no door !");
             return;
         }
- 
+
         this.aCurrentRoom = vNextRoom; // définie la prochaine piece
 
         printLocationInfo(); // affiche la description de la piece
-    }   
+    }
     
     private void printWelcome(){
         System.out.println("Welcome to the World of Zuul! \n World of Zuul is a new, incredibly boring adventure game. \n Type 'help' if you need help. \n \n");

@@ -1,6 +1,6 @@
  
 /**
- * Classe Command - une commande du jeu d'aventure Zuul.
+ * Analyse des commandes exécuté par l'utilisateur
  *
  * @author Brenner Augustin
  */
@@ -9,6 +9,11 @@ public class Command
     private String aCommandWord;
     private String aSecondWord;
     
+    /**
+     * Constructeur naturel
+     * @param pCommandWord -> String : Premier mot de la commande exécuté par l'utilisateur
+     * @param pSecondWord -> String : Deuxième mot de la commande exécuté par l'utilisateur
+     */
     public Command(final String pCommandWord, final String pSecondWord){
         this.aCommandWord = pCommandWord;
         this.aSecondWord = pSecondWord;
@@ -36,7 +41,7 @@ public class Command
     }
     
     /**
-     * La fonction renvoie vrai si le premier mot est null
+     * La fonction renvoie vrai si le premier mot est null (incorect)
      */
     public boolean  isUnknown(){
         return this.aCommandWord == null;
