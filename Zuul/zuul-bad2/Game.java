@@ -1,4 +1,4 @@
- 
+
 /**
  * Classe Game - le moteur du jeu d'aventure Zuul.
  *
@@ -16,7 +16,7 @@ public class Game
         this.aParser = new Parser();
         //printWelcome();
     }
-    
+
     /**
      * Procédure de création de Room
      */
@@ -79,18 +79,17 @@ public class Game
 
         this.aCurrentRoom = vPlace;
     }
-    
+
     /**
      * Procédure qui affiche les informations de la localisation
      */
     private void printLocationInfo(){
-       System.out.println("You are " + aCurrentRoom.getDescription());
-       System.out.println(this.aCurrentRoom.getExitString());
+        System.out.println("You are " + this.aCurrentRoom.getLongDescription());
     }
-    
+
     /**
      * Procédure qui permet un changement de pièce
-     * @param -> pInstruction (Command)
+     * @param pInstruction (Command) ->  Commande entré par le joueur
      */
     private void goRoom(final Command pInstruction)
     {
@@ -103,7 +102,7 @@ public class Game
         Room vNextRoom = null; // définition de la prochaine piece
         String vDirection = pInstruction.getSecondWord(); // la direction indiqué par le joueur
         boolean vUnknowDirection = true; // permet de savoir si le joueur a donné une direcion valide
-        String[] vTabDirection = {"north", "south", "east", "west", "up", "down", "north-west", "south-east"}; // tableau des directions possibles
+        String[] vTabDirection = {"north", "south", "east", "west", "up", "down", "north-west", "south-east", "south-west", "north-east"}; // tableau des directions possibles
 
         // Verification de la commande entré par le joueur
         for (int i = 0; i < vTabDirection.length; i++){
@@ -114,7 +113,7 @@ public class Game
         }
 
         // Si la commande ne corresond à aucune direction
-        if(vUnknowDirection == true){
+        if(vUnknowDirection){
             System.out.println("Unknown direction!");
             return;
         }
@@ -128,36 +127,28 @@ public class Game
 
         printLocationInfo(); // affiche la description de la piece
     }
-    
+
+    /**
+     * Procédure qui affiche le message de bienvenue
+     */
     private void printWelcome(){
         System.out.println("Welcome to the World of Zuul! \n World of Zuul is a new, incredibly boring adventure game. \n Type 'help' if you need help. \n \n");
-        /*String vNorth = "";
-        String vSouth = "";
-        String vEast = "";
-        String vWest = "";
-        if (this.aCurrentRoom.aNorthExit != null){
-            vNorth = "north ";
-        }
-        if (this.aCurrentRoom.aSouthExit != null){
-            vSouth = "south";
-        }
-        if (this.aCurrentRoom.aEastExit != null){
-            vEast = "east";
-        }
-        if (this.aCurrentRoom.aWestExit != null){
-            vWest = "west";
-        }
-        System.out.println("You are " + aCurrentRoom.getDescription().toLowerCase() + "\n Exits : " + vNorth + " " + vSouth + " " + vEast + " " + vWest);
-        // You are outside the main entrance of the university \n Exits: east south west
-        
-        */
         printLocationInfo();
     }
-    
+
+    /**
+     * Procédure qui affiche le message d'aide
+     */
     private void printHelp(){
-        System.out.println("You are lost. You are alone. \n You wander around the island. \n \n Your command words are: \n  go quit help");
+        System.out.println("You are lost. You are alone. \n You wander around the island. \n \n Your command words are: ");
+        this.aParser.showCommands();
     }
-    
+
+    /**
+     * Procédure qui permet de quitter le jeu
+     * @param pQuit (Command) -> Commande entré par le joueur
+     * @return -> boolean
+     */
     private boolean quit(final Command pQuit){
         if (pQuit.hasSecondWord()){
             System.out.println("Quit what?");
@@ -166,7 +157,12 @@ public class Game
             return true;
         }
     }
-    
+
+    /**
+     * Fonction qui permet de traiter les commandes
+     * @param pInstruction (Command) -> Commande entré par le joueur
+     * @return -> boolean (true si la commande est "quit" et que le joueur souhaite quitter le jeu)
+     */
     private boolean processCommand(final Command pInstruction){
         if(pInstruction.isUnknown()){
             System.out.println("I don't know what you mean...");
@@ -179,19 +175,49 @@ public class Game
         }else if(pInstruction.getCommandWord().equals("go")){
             goRoom(pInstruction);
             return false;
+        } else if (pInstruction.getCommandWord().equals("look")) {
+            if (pInstruction.hasSecondWord()){
+                System.out.println("I don't know how to look at something in particular yet");
+            }else {
+                look();
+            }
+            return false;
+        }else if (pInstruction.getCommandWord().equals("eat")) {
+            if (pInstruction.hasSecondWord()){
+                System.out.println("What do you want to eat ?");
+            }else {
+                eat();
+            }
+            return false;
         }else{
             System.out.println("I don't know what you mean...");
             return false;
         }
     }
-    
+
+    /**
+     * Procédure qui permet de jouer
+     */
     public void play(){
         this.printWelcome();
         boolean vFinished = false;
-        while (vFinished == false){
+        while (!vFinished){
             Command vCommand = aParser.getCommand();
             vFinished = processCommand(vCommand);
         }
         System.out.println("Thank you for playing.  Good bye.");
+    }
+    /**
+     * Procédure qui permet d'afficher la description de la pièce
+     */
+    private void look(){
+        System.out.println(this.aCurrentRoom.getLongDescription());
+    }
+
+    /**
+     * Procédure qui permet au personnage de manger
+     */
+    private void eat(){
+        System.out.println("You have eaten now and you are not hungry any more.");
     }
 } // Game

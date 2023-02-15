@@ -1,8 +1,8 @@
- 
+
 /**
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
- * 
+ * This class is part of the "World of Zuul" application.
+ * "World of Zuul" is a very simple, text based adventure game.
+ *
  * This class holds an enumeration table of all command words known to the game.
  * It is used to recognise commands as they are typed in.
  *
@@ -12,21 +12,25 @@
 public class CommandWords
 {
     // a constant array that will hold all valid command words
-    private final String[] aValidCommands;
+    // un tableau constant qui contient toutes les commandes valides
+    private static final String aValidCommands[] = {
+            "go", "quit", "help", "look", "eat"
+    };
+
+    // /**
+     // * Constructor - initialise the command words.
+     // */
+    // public CommandWords()
+    // {
+        // this.aValidCommands[0] = "go";
+        // this.aValidCommands[1] = "help";
+        // this.aValidCommands[2] = "quit";
+        // this.aValidCommands[3] = "look";
+        // this.aValidCommands[4] = "eat";
+    // } // CommandWords()
 
     /**
-     * Constructor - initialise the command words.
-     */
-    public CommandWords()
-    {
-        this.aValidCommands = new String[3];
-        this.aValidCommands[0] = "go";
-        this.aValidCommands[1] = "help";
-        this.aValidCommands[2] = "quit";
-    } // CommandWords()
-
-    /**
-     * Check whether a given String is a valid command word. 
+     * Check whether a given String is a valid command word.
      * @return true if a given string is a valid command,
      * false if it isn't.
      */
@@ -39,4 +43,15 @@ public class CommandWords
         // if we get here, the string was not found in the commands :
         return false;
     } // isCommand()
+
+    /**
+     * Print all valid commands to System.out.
+     */
+    public void showAll(){
+        for(String command : this.aValidCommands) {
+            System.out.print(command + "  ");
+        }
+        System.out.println();
+    }
+
 } // CommandWords
