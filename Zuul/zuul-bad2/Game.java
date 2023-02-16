@@ -141,7 +141,7 @@ public class Game
      */
     private void printHelp(){
         System.out.println("You are lost. You are alone. \n You wander around the island. \n \n Your command words are: ");
-        this.aParser.showCommands();
+        System.out.println(this.aParser.getCommands());
     }
 
     /**

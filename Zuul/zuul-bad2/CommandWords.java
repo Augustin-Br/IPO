@@ -17,17 +17,17 @@ public class CommandWords
             "go", "quit", "help", "look", "eat"
     };
 
-    // /**
-     // * Constructor - initialise the command words.
-     // */
-    // public CommandWords()
-    // {
-        // this.aValidCommands[0] = "go";
-        // this.aValidCommands[1] = "help";
-        // this.aValidCommands[2] = "quit";
-        // this.aValidCommands[3] = "look";
-        // this.aValidCommands[4] = "eat";
-    // } // CommandWords()
+//    /**
+//     * Constructor - initialise the command words.
+//     */
+//    public CommandWords()
+//    {
+//        this.aValidCommands[0] = "go";
+//        this.aValidCommands[1] = "help";
+//        this.aValidCommands[2] = "quit";
+//        this.aValidCommands[3] = "look";
+//        this.aValidCommands[4] = "eat";
+//    } // CommandWords()
 
     /**
      * Check whether a given String is a valid command word.
@@ -45,13 +45,15 @@ public class CommandWords
     } // isCommand()
 
     /**
-     * Print all valid commands to System.out.
+     * Fonction qui renvoie la liste de toutes les commandes valides
+     * @return -> String : liste des commandes valides
      */
-    public void showAll(){
+    public String getAllCommands(){
+        String vAllCommands = "";
         for(String command : this.aValidCommands) {
-            System.out.print(command + "  ");
+            vAllCommands += command + " ";
         }
-        System.out.println();
+        return vAllCommands;
     }
 
 } // CommandWords
