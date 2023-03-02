@@ -42,13 +42,12 @@ public class Room
         * @return -> String : liste des sorties
         */
     public String getExitString(){
-        String vExitString = "Exits : ";
+        StringBuilder vExitString = new StringBuilder("Exits : ");
         Set<String> vKeys = this.aExits.keySet();
         for (String vExit : vKeys){
-            vExitString += " " + vExit;
+            vExitString.append(" " + vExit);
         }
-        return vExitString;
-
+        return vExitString.toString();
     }
 
     /**
