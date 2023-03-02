@@ -11,14 +11,16 @@ public class Room
 {
     private String aDescription; // Description des lieux
     private HashMap<String, Room> aExits; //HashMap qui contient les différentes sorties de la pièce
+    private String aImageName; // Nom de l'image de la pièce
 
     /**
      * Constructeur naturel
      * @param pDescription (String) -> description de la pièce
      */
-    public Room(final String pDescription){
+    public Room(final String pDescription, final String pImageName){
         this.aDescription = pDescription;
         aExits = new HashMap<String, Room>(); // Création d'une HashMap vide
+        this.aImageName = pImageName;
     }
 
     /**
@@ -67,5 +69,13 @@ public class Room
      */
     public String getLongDescription(){
         return "You are " + this.aDescription + ".\n" + this.getExitString();
+    }
+
+    /**
+     * Accesseur ImageName
+     * @return -> String : nom de l'image de la pièce
+     */
+    public String getImageName(){
+        return this.aImageName;
     }
 } // Room

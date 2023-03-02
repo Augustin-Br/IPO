@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Room
-comment1.params=pDescription
-comment1.target=Room(java.lang.String)
+comment1.params=pDescription\ pImageName
+comment1.target=Room(java.lang.String,\ java.lang.String)
 comment1.text=\n\ Constructeur\ naturel\n\ @param\ pDescription\ (String)\ ->\ description\ de\ la\ pi\u00E8ce\n
 comment2.params=
 comment2.target=java.lang.String\ getDescription()
@@ -18,4 +18,7 @@ comment5.text=\n\ D\u00E9finition\ des\ sorties\ de\ chaque\ piece.\ Chaque\ dir
 comment6.params=
 comment6.target=java.lang.String\ getLongDescription()
 comment6.text=\n\ Retourne\ une\ description\ complete\ de\ cette\ pi\u00E8ce,\ de\ la\ forme\ \:\n\ \ \ \ You\ are\ in\ the\ kitchen.\n\ \ \ \ Exits\ \:\ north\ west\n\ @return\ ->\ String\ \:\ description\ de\ la\ pi\u00E8ce\n
-numComments=7
+comment7.params=
+comment7.target=java.lang.String\ getImageName()
+comment7.text=\n\ Accesseur\ ImageName\n\ @return\ ->\ String\ \:\ nom\ de\ l'image\ de\ la\ pi\u00E8ce\n
+numComments=8

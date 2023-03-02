@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=Parser
-comment0.text=\n\ This\ class\ is\ part\ of\ the\ "World\ of\ Zuul"\ application.\n\ "World\ of\ Zuul"\ is\ a\ very\ simple,\ text\ based\ adventure\ game.\n\n\ This\ parser\ reads\ user\ input\ and\ tries\ to\ interpret\ it\ as\ an\ "Adventure"\n\ command.\ Every\ time\ it\ is\ called\ it\ reads\ a\ line\ from\ the\ terminal\ and\n\ tries\ to\ interpret\ the\ line\ as\ a\ two\ word\ command.\ It\ returns\ the\ command\n\ as\ an\ object\ of\ class\ Command.\n\n\ The\ parser\ has\ a\ set\ of\ known\ command\ words.\ It\ checks\ user\ input\ against\n\ the\ known\ commands,\ and\ if\ the\ input\ is\ not\ one\ of\ the\ known\ commands,\ it\n\ returns\ a\ command\ object\ that\ is\ marked\ as\ an\ unknown\ command.\n\n\ @author\ \ Michael\ Kolling\ and\ David\ J.\ Barnes\ +\ D.Bureau\n\ @version\ 2008.03.30\ +\ 2013.09.15\n
+comment0.text=\n\ This\ class\ is\ part\ of\ "World\ of\ Zuul".\ "World\ of\ Zuul"\ is\ a\ simple,\n\ text\ based\ adventure\ game.\n\n\ This\ parser\ takes\ user\ input\ and\ tries\ to\ interpret\ it\ as\ a\ "Zuul"\n\ command.\ Every\ time\ it\ is\ called\ it\ takes\ a\ line\ as\ a\ String\ and\n\ tries\ to\ interpret\ the\ line\ as\ a\ two\ word\ command.\ It\ returns\ the\ command\n\ as\ an\ object\ of\ class\ Command.\n\n\ The\ parser\ has\ a\ set\ of\ known\ command\ words.\ It\ checks\ user\ input\ against\n\ the\ known\ commands,\ and\ if\ the\ input\ is\ not\ one\ of\ the\ known\ commands,\ it\n\ returns\ a\ command\ object\ that\ is\ marked\ as\ an\ unknown\ command.\n\n\ @author\ \ Michael\ Kolling\ and\ David\ J.\ Barnes\n\ @version\ 2.0\ (Jan\ 2003)\ DB\ edited\ (2019)\n
 comment1.params=
 comment1.target=Parser()
-comment1.text=\n\ Constructeur\ par\ defaut\ qui\ cree\ les\ 2\ objets\ prevus\ pour\ les\ attributs\n
-comment2.params=
-comment2.target=Command\ getCommand()
-comment2.text=\n\ @return\ The\ next\ command\ from\ the\ user.\n
+comment1.text=\n\ Create\ a\ new\ Parser.\n
+comment2.params=pInputLine
+comment2.target=Command\ getCommand(java.lang.String)
+comment2.text=\n\ Get\ a\ new\ command\ from\ the\ user.\ The\ command\ is\ read\ by\n\ parsing\ the\ 'inputLine'.\n
 comment3.params=
-comment3.target=java.lang.String\ getCommands()
-comment3.text=\n\ Affiche\ la\ liste\ des\ commandes\ valides\n\ @return\ ->\ String\ \:\ liste\ des\ commandes\ valides\n
+comment3.target=java.lang.String\ getCommandString()
+comment3.text=\n\ Returns\ a\ String\ with\ valid\ command\ words.\n
 numComments=4

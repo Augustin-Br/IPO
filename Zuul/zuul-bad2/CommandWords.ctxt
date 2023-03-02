@@ -5,6 +5,6 @@ comment1.params=pString
 comment1.target=boolean\ isCommand(java.lang.String)
 comment1.text=\n\ Check\ whether\ a\ given\ String\ is\ a\ valid\ command\ word.\n\ @return\ true\ if\ a\ given\ string\ is\ a\ valid\ command,\n\ false\ if\ it\ isn't.\n
 comment2.params=
-comment2.target=java.lang.String\ getAllCommands()
+comment2.target=java.lang.String\ getCommandList()
 comment2.text=\n\ Fonction\ qui\ renvoie\ la\ liste\ de\ toutes\ les\ commandes\ valides\n\ @return\ ->\ String\ \:\ liste\ des\ commandes\ valides\n
 numComments=3

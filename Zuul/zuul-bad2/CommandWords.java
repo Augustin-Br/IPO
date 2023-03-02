@@ -13,7 +13,7 @@ public class CommandWords
 {
     // a constant array that will hold all valid command words
     // un tableau constant qui contient toutes les commandes valides
-    private static final String aValidCommands[] = {
+    private static final String[] aValidCommands = {
             "go", "quit", "help", "look", "eat"
     };
 
@@ -48,7 +48,7 @@ public class CommandWords
      * Fonction qui renvoie la liste de toutes les commandes valides
      * @return -> String : liste des commandes valides
      */
-    public String getAllCommands(){
+    public String getCommandList(){
         String vAllCommands = "";
         for(String command : this.aValidCommands) {
             vAllCommands += command + " ";
