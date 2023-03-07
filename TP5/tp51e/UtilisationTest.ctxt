@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=UtilisationTest
+comment1.params=
+comment1.target=void\ setUp()
+comment1.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment2.params=
+comment2.target=void\ testClasse_1()
+comment3.params=
+comment3.target=void\ testAttribut_2()
+comment4.params=
+comment4.target=void\ testConstructeur_3()
+comment5.params=
+comment5.target=void\ testEssai_4()
+comment6.params=
+comment6.target=void\ testCompare_5()
+comment7.params=
+comment7.target=void\ tearDown()
+comment7.text=\r\n\ Supprime\ les\ engagements\r\n\r\n\ M\u00E9thode\ appel\u00E9e\ apr\u00E8s\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
+numComments=8

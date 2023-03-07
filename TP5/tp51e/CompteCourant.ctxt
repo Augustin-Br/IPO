@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=CompteCourant
+comment0.text=\n\ D\u00E9crivez\ votre\ classe\ CompteCourant\ ici.\n\n\ @author\ (votre\ nom)\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\n
+comment1.params=pSolde
+comment1.target=CompteCourant(double)
+comment1.text=\n\ Constructeur\ naturel\n\ \n\ @param\ pSolde\ Solde\ du\ compte\n
+comment2.params=
+comment2.target=void\ capitaliseUnAn()
+comment2.text=\n\ M\u00E9thode\ qui\ capitalise\ les\ int\u00E9rets\ d'un\ an\n
+numComments=3

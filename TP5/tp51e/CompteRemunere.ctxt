@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=CompteRemunere
+comment0.text=\n\ D\u00E9crivez\ votre\ classe\ CompteRemunere\ ici.\n\n\ @author\ (votre\ nom)\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\n
+comment1.params=pSolde\ pTaux
+comment1.target=CompteRemunere(double,\ double)
+comment1.text=\n\ Constructeur\ naturel\n\ \n\ @param\ pSolde\ Solde\ du\ compte\n\ @param\ pTaux\ Taux\ d'int\u00E9r\u00EAt\ du\ compte\n
+comment2.params=
+comment2.target=double\ getTaux()
+comment2.text=\n\ Getter\ du\ taux\ d'int\u00E9r\u00EAt\ du\ compte\n\ \n\ @return\ Le\ taux\ d'int\u00E9r\u00EAt\n
+comment3.params=
+comment3.target=void\ capitaliseUnAn()
+comment3.text=\n\ M\u00E9thode\ abstraite\ qui\ capitalise\ les\ int\u00E9rets\ d'un\ an\n
+numComments=4
